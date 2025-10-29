@@ -6,7 +6,7 @@ const Projects = () => {
     {
       title: "Portfolio Website",
       description: "A personal portfolio website built with React and CSS.",
-      link: "#",
+      link: "https://github.com/Amanualegezahegne/Amanuale-portifolio.git",
     },
     {
       title: "Quiz App",
@@ -47,3 +47,4 @@ const Projects = () => {
 };
 
 export default Projects;
+
