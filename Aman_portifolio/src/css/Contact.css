@@ -1,0 +1,109 @@
+#Contact {
+    padding: 60px 20px;
+    min-height: 70vh;
+    text-align: center;
+    background: linear-gradient(135deg, #0f2027, #203a43, #255a70);
+    color: #fff;
+}
+
+/* Section heading */
+#Contact h2 {
+    font-size: 2rem;
+    margin-bottom: 15px;
+    color: #fff;
+}
+
+#Contact p {
+    font-size: 1.1rem;
+    margin-bottom: 40px;
+    color: #ddd;
+}
+
+/* Form styling */
+.contact-form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+/* Inputs and textarea with glass effect */
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 12px 15px;
+    margin-bottom: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    border-radius: 6px;
+    font-size: 1rem;
+    background-color: rgba(255, 255, 255, 0.05);
+    color: #fff;
+    backdrop-filter: blur(5px);
+    resize: none;
+}
+
+/* Textarea height */
+.contact-form textarea {
+    min-height: 150px;
+}
+
+/* Submit button */
+.contact-form button {
+    padding: 12px 25px;
+    background-color: #0078ff;
+    color: #fff;
+    font-size: 1rem;
+    font-weight: 500;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #0056cc;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 768px) {
+    #Contact {
+        padding: 50px 15px;
+    }
+
+    #Contact h2 {
+        font-size: 1.8rem;
+    }
+
+    #Contact p {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+
+    .contact-form button {
+        width: 100%;
+    }
+}
+
+@media (max-width: 480px) {
+    #Contact {
+        padding: 40px 10px;
+    }
+
+    #Contact h2 {
+        font-size: 1.6rem;
+    }
+
+    #Contact p {
+        font-size: 0.95rem;
+        margin-bottom: 25px;
+    }
+
+    .contact-form input,
+    .contact-form textarea {
+        padding: 10px 12px;
+        font-size: 0.95rem;
+    }
+
+    .contact-form button {
+        padding: 10px 15px;
+    }
+}
