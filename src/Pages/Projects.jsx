@@ -26,7 +26,27 @@ const Projects = () => {
     {
       title: "Ankesebirhan Sunday School",
       description: "A comprehensive platform for managing Sunday school activities, student records, and educational resources.",
-      link: "#",
+      link: "https://github.com/Amanualegezahegne/Ankese_birhan_senbet.git",
+    },
+    {
+      title: "Spam Filter Detection",
+      description: "A machine learning-based tool for identifying and filtering spam content in messages.",
+      link: "https://github.com/Amanualegezahegne/spam-filter-detection.git",
+    },
+    {
+      title: "Project Management Tool",
+      description: "A collaborative task tracking and management system designed for academic and professional projects.",
+      link: "https://github.com/Amanualegezahegne/project_managment.git",
+    },
+    {
+      title: "To-Do List App",
+      description: "A lightweight and efficient application for daily task planning and personal productivity.",
+      link: "https://github.com/Amanualegezahegne/to-do-app.git",
+    },
+    {
+      title: "Kotlin Gradle Project",
+      description: "A backend development project showcasing Kotlin's capabilities with the Gradle build system.",
+      link: "https://github.com/Amanualegezahegne/kotlin__gradle_project.git",
     },
   ];
 
