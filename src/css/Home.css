@@ -1,0 +1,151 @@
+.home {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 90vh;
+    padding: 60px 40px;
+    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+    color: #fff;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Decorative glowing background orbs */
+.home::before,
+.home::after {
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(0, 119, 255, 0.2);
+    filter: blur(100px);
+    animation: floatGlow 10s infinite alternate ease-in-out;
+}
+
+.home::before {
+    top: -50px;
+    left: -100px;
+}
+
+.home::after {
+    bottom: -50px;
+    right: -100px;
+    animation-delay: 5s;
+}
+
+@keyframes floatGlow {
+    from {
+        transform: translateY(0);
+    }
+
+    to {
+        transform: translateY(40px);
+    }
+}
+
+/* Content wrapper */
+.home-content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 60px;
+    max-width: 1100px;
+    width: 100%;
+    z-index: 2;
+}
+
+/* Intro text */
+.intro {
+    flex: 1;
+}
+
+.intro h1 {
+    font-size: 2.8rem;
+    margin-bottom: 20px;
+    color: #fff;
+}
+
+.intro p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin-bottom: 30px;
+    color: #dcdcdc;
+}
+
+/* Button */
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    background: linear-gradient(135deg, #0078ff, #00c6ff);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 6px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 20px rgba(0, 120, 255, 0.4);
+}
+
+/* Home image */
+.home-image img {
+    width: 320px;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+    transition: transform 0.4s ease;
+}
+
+.home-image img:hover {
+    transform: scale(1.05);
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 1024px) {
+    .intro h1 {
+        font-size: 2.4rem;
+    }
+
+    .home-image img {
+        width: 270px;
+    }
+}
+
+@media (max-width: 768px) {
+    .home-content {
+        flex-direction: column-reverse;
+        text-align: center;
+        gap: 40px;
+    }
+
+    .intro h1 {
+        font-size: 2.2rem;
+    }
+
+    .intro p {
+        font-size: 1.1rem;
+    }
+
+    .home-image img {
+        width: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .home {
+        padding: 40px 20px;
+    }
+
+    .intro h1 {
+        font-size: 1.8rem;
+    }
+
+    .intro p {
+        font-size: 1rem;
+    }
+
+    .home-image img {
+        width: 200px;
+    }
+}
