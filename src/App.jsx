@@ -1,11 +1,11 @@
 import React from "react";
 import "./css/App.css";
-import Navbar from "./components/Navbar";
-import Home from "./pages/Home";
-import About from "./pages/About";
-import Projects from "./pages/Projects";
-import Contact from "./pages/Contact";
-import Footer from "./components/Footer"; // Import Footer
+import Navbar from "./Components/Navbar";
+import Home from "./Pages/Home";
+import About from "./Pages/About";
+import Projects from "./Pages/Projects";
+import Contact from "./Pages/Contact";
+import Footer from "./Components/Footer"; // Import Footer
 
 function App() {
   return (
