@@ -23,6 +23,11 @@ const Projects = () => {
       description: "A clean, responsive web app showcasing natural honey products, allowing users to explore and purchase with ease.",
       link: "https://github.com/Amanualegezahegne/sweetbee.git",
     },
+    {
+      title: "Ankesebirhan Sunday School",
+      description: "A comprehensive platform for managing Sunday school activities, student records, and educational resources.",
+      link: "#",
+    },
   ];
 
   return (
