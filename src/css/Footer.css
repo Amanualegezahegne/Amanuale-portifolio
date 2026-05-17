@@ -1,9 +1,12 @@
 /* Footer */
 footer {
-    background: linear-gradient(135deg, #0f2027, #203a43, #255a70);
+    background-color: rgba(6, 10, 15, 0.6);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-top: 1px solid rgba(255, 255, 255, 0.05);
     padding: 40px 20px;
     text-align: center;
-    color: #fff;
+    color: var(--text-primary);
     font-size: 0.95rem;
 }
 
@@ -15,24 +18,24 @@ footer {
     margin-bottom: 20px;
 }
 
-/* Social icons */
+/* Social icons with design system custom tokens */
 .footer-icon {
-    color: #fff;
+    color: var(--text-secondary);
     font-size: 1.8rem;
-    transition: color 0.3s, transform 0.3s, text-shadow 0.3s;
+    transition: var(--transition);
 }
 
 .footer-icon:hover {
-    color: #00bfff;
-    transform: scale(1.2);
-    text-shadow: 0 0 8px #00bfff;
+    color: var(--accent-color);
+    transform: scale(1.2) translateY(-2px);
+    filter: drop-shadow(0 0 8px var(--accent-glow));
 }
 
 /* Footer bottom text */
 .footer-bottom {
     margin-top: 20px;
     font-size: 0.85rem;
-    color: #aaa;
+    color: var(--text-secondary);
 }
 
 /* ===== Responsive ===== */
@@ -43,23 +46,5 @@ footer {
 
     .footer-icon {
         font-size: 1.6rem;
-    }
-
-    .footer-bottom {
-        font-size: 0.8rem;
-    }
-}
-
-@media (max-width: 480px) {
-    footer {
-        padding: 30px 10px;
-    }
-
-    .footer-icon {
-        font-size: 1.4rem;
-    }
-
-    .footer-bottom {
-        font-size: 0.75rem;
     }
 }

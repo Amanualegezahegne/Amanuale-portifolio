@@ -1,22 +1,81 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+
+:root {
+  /* Colors & Theme Design System */
+  --bg-color: #0b0f19;
+  --bg-gradient: radial-gradient(circle at 50% 0%, #172836 0%, #0d1620 50%, #060a0f 100%);
+  --accent-color: #38bdf8;       /* Electric Sky Blue */
+  --accent-color-rgb: 56, 189, 248;
+  --accent-glow: rgba(56, 189, 248, 0.35);
+  --card-bg: rgba(255, 255, 255, 0.03);
+  --card-border: rgba(255, 255, 255, 0.07);
+  --card-hover-bg: rgba(255, 255, 255, 0.06);
+  --card-hover-border: rgba(56, 189, 248, 0.3);
+  
+  --text-primary: #f8fafc;       /* Crisp White/Slate */
+  --text-secondary: #94a3b8;     /* Soft Grey */
+  --btn-gradient: linear-gradient(135deg, #0078ff, #00c6ff);
+  --btn-hover-gradient: linear-gradient(135deg, #0056cc, #00a3ff);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 body {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #fafafa;
-  color: #333;
+  font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: var(--bg-gradient);
+  background-attachment: fixed; /* Ensures background is one seamless, stationary canvas */
+  color: var(--text-primary);
+  min-height: 100vh;
+  overflow-x: hidden;
+  line-height: 1.5;
 }
 
 section {
-  padding: 80px 20px;
+  padding: 100px 20px;
   min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background: transparent !important; /* Set to transparent globally so index background shows through */
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Outfit', sans-serif;
+  color: var(--text-primary);
 }
 
 h2 {
-  margin-bottom: 20px;
-  font-size: 2rem;
+  margin-bottom: 40px;
+  font-size: 2.5rem;
+  font-weight: 700;
   text-align: center;
+  letter-spacing: -0.02em;
+}
+
+/* Custom Sleek Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #060a0f;
+}
+
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #1e293b, var(--accent-color));
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
 }

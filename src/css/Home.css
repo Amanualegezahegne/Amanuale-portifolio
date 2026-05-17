@@ -2,25 +2,26 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    min-height: 90vh;
+    min-height: calc(100vh - 60px);
     padding: 60px 40px;
-    background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-    color: #fff;
+    background: transparent;
+    color: var(--text-primary);
     position: relative;
     overflow: hidden;
 }
 
-/* Decorative glowing background orbs */
+/* Decorative glowing background orbs with variables */
 .home::before,
 .home::after {
     content: "";
     position: absolute;
-    width: 300px;
-    height: 300px;
+    width: 350px;
+    height: 350px;
     border-radius: 50%;
-    background: rgba(0, 119, 255, 0.2);
-    filter: blur(100px);
-    animation: floatGlow 10s infinite alternate ease-in-out;
+    background: var(--accent-glow);
+    filter: blur(120px);
+    z-index: 1;
+    animation: floatGlow 12s infinite alternate ease-in-out;
 }
 
 .home::before {
@@ -31,16 +32,16 @@
 .home::after {
     bottom: -50px;
     right: -100px;
-    animation-delay: 5s;
+    animation-delay: 6s;
+    background: rgba(99, 102, 241, 0.25); /* Indigo glow */
 }
 
 @keyframes floatGlow {
     from {
-        transform: translateY(0);
+        transform: translateY(0) scale(1);
     }
-
     to {
-        transform: translateY(40px);
+        transform: translateY(40px) scale(1.1);
     }
 }
 
@@ -61,50 +62,67 @@
 }
 
 .intro h1 {
-    font-size: 2.8rem;
+    font-size: 3.5rem;
+    font-weight: 800;
     margin-bottom: 20px;
-    color: #fff;
+    line-height: 1.2;
+    letter-spacing: -0.03em;
+    background: linear-gradient(135deg, #ffffff 40%, var(--accent-color) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
 }
 
 .intro p {
     font-size: 1.2rem;
     line-height: 1.6;
-    margin-bottom: 30px;
-    color: #dcdcdc;
+    margin-bottom: 35px;
+    color: var(--text-secondary);
 }
 
-/* Button */
+/* Button with design tokens */
 .btn {
     display: inline-block;
-    padding: 12px 25px;
-    background: linear-gradient(135deg, #0078ff, #00c6ff);
+    padding: 14px 30px;
+    background: var(--btn-gradient);
     color: #fff;
+    font-weight: 600;
     text-decoration: none;
-    border-radius: 6px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 8px;
+    transition: var(--transition);
+    box-shadow: 0 4px 15px rgba(0, 120, 255, 0.2);
 }
 
 .btn:hover {
     transform: translateY(-3px);
-    box-shadow: 0 8px 20px rgba(0, 120, 255, 0.4);
+    box-shadow: 0 8px 25px var(--accent-glow);
+    background: var(--btn-hover-gradient);
 }
 
-/* Home image */
+/* Home image container and glow */
+.home-image {
+    position: relative;
+    z-index: 2;
+}
+
 .home-image img {
     width: 320px;
-    border-radius: 15px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
-    transition: transform 0.4s ease;
+    height: auto;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(56, 189, 248, 0.15);
+    transition: var(--transition);
 }
 
 .home-image img:hover {
-    transform: scale(1.05);
+    transform: scale(1.03) translateY(-5px);
+    box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 50px rgba(56, 189, 248, 0.3);
+    border-color: rgba(56, 189, 248, 0.4);
 }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
     .intro h1 {
-        font-size: 2.4rem;
+        font-size: 3rem;
     }
 
     .home-image img {
@@ -113,6 +131,10 @@
 }
 
 @media (max-width: 768px) {
+    .home {
+        padding: 80px 25px;
+    }
+
     .home-content {
         flex-direction: column-reverse;
         text-align: center;
@@ -120,11 +142,12 @@
     }
 
     .intro h1 {
-        font-size: 2.2rem;
+        font-size: 2.6rem;
     }
 
     .intro p {
         font-size: 1.1rem;
+        margin-bottom: 25px;
     }
 
     .home-image img {
@@ -134,11 +157,11 @@
 
 @media (max-width: 480px) {
     .home {
-        padding: 40px 20px;
+        padding: 60px 15px;
     }
 
     .intro h1 {
-        font-size: 1.8rem;
+        font-size: 2.2rem;
     }
 
     .intro p {
