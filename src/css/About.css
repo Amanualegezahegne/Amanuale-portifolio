@@ -94,6 +94,7 @@
     background-color: var(--card-hover-bg);
     border-color: var(--card-hover-border);
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.25), 0 0 20px rgba(56, 189, 248, 0.1);
+    border-left: 3px solid var(--accent-color);
 }
 
 .about-cards .card h3 {
@@ -168,4 +169,93 @@
     .about-image img {
         width: 200px;
     }
+}
+
+/* ===== SkillBar ===== */
+.skill-bar-item {
+  margin-bottom: 12px;
+}
+
+.skill-bar-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 6px;
+  font-size: 0.9rem;
+}
+
+.skill-label {
+  color: var(--text-primary);
+  font-family: var(--font-mono);
+  font-weight: 500;
+}
+
+.skill-percent {
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+.skill-track {
+  height: 8px;
+  border-radius: var(--radius-pill);
+  background: rgba(255, 255, 255, 0.07);
+  overflow: hidden;
+}
+
+.skill-fill {
+  height: 100%;
+  border-radius: var(--radius-pill);
+  background: linear-gradient(90deg, var(--accent-color), rgba(56, 189, 248, 0.5));
+  transition: width 800ms ease-out;
+}
+
+/* ===== Image accent border ===== */
+.image-accent-border {
+  position: absolute;
+  inset: -4px;
+  border-radius: 24px;
+  border: 4px solid var(--accent-color);
+  box-shadow: 0 0 24px var(--accent-glow);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.about-image img {
+  position: relative;
+  z-index: 1;
+}
+
+/* ===== Download CV button ===== */
+.download-cv {
+  display: inline-block;
+  margin: 20px 0 10px;
+  padding: 13px 28px;
+  background: transparent;
+  color: var(--accent-color);
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--accent-color);
+  transition: var(--transition);
+}
+
+.download-cv:hover {
+  background: rgba(56, 189, 248, 0.1);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+/* ===== Skill bars container ===== */
+.skill-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  margin-top: 8px;
+}
+
+/* ===== Responsive: reduced motion label size ===== */
+@media (max-width: 320px) {
+  .skill-label {
+    font-size: 0.8rem;
+  }
 }

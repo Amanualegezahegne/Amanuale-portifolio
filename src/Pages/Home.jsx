@@ -1,21 +1,41 @@
 import React from "react";
 import "../css/Home.css";
 import image from "../assets/images/DSC_0127.JPG";
+import { useTypedEffect } from "../hooks/useTypedEffect";
 
 const Home = () => {
+    const displayedText = useTypedEffect(
+        ['Software Engineering Student', 'Full-Stack Developer', 'Problem Solver', 'Open Source Enthusiast'],
+        80
+    );
+
     return (
         <section id="Home" className="home">
             <div className="home-content">
                 <div className="intro">
-                    <h1>Hi, I'm Amanuale Gezahegn!</h1>
-                    <p>
-                        I'm a passionate web developer focused on creating modern, responsive,
-                        and user-friendly websites. I love turning ideas into reality with code.
+                    <h1 className="hero-name">
+                        Hi, I'm <span className="gradient-name">Amanuale Gezahegn</span>
+                    </h1>
+
+                    <p className="hero-role">
+                        <span className="typed-text">{displayedText}</span>
+                        <span className="typed-cursor" aria-hidden="true">|</span>
                     </p>
-                    <a href="#Projects" className="btn">See My Work</a>
+
+                    <p className="hero-subtext">
+                        4th-year Software Engineering student at Debre Birhan University.
+                        Building full-stack web apps and turning complex problems into elegant solutions.
+                    </p>
+
+                    <div className="hero-ctas">
+                        <a href="#Projects" className="btn btn-primary">View My Work</a>
+                        <a href="/cv.pdf" download className="btn btn-secondary">Download CV</a>
+                    </div>
                 </div>
+
                 <div className="home-image">
-                    <img src={image} alt="Amanuale" />
+                    <div className="image-glow-ring" aria-hidden="true" />
+                    <img src={image} alt="Amanuale Gezahegn — Software Engineering Student" />
                 </div>
             </div>
         </section>

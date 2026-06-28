@@ -1,3 +1,4 @@
+/* ===== Base section ===== */
 .home {
     display: flex;
     justify-content: center;
@@ -10,7 +11,7 @@
     overflow: hidden;
 }
 
-/* Decorative glowing background orbs with variables */
+/* Decorative glowing background orbs */
 .home::before,
 .home::after {
     content: "";
@@ -33,16 +34,12 @@
     bottom: -50px;
     right: -100px;
     animation-delay: 6s;
-    background: rgba(99, 102, 241, 0.25); /* Indigo glow */
+    background: rgba(99, 102, 241, 0.25);
 }
 
 @keyframes floatGlow {
-    from {
-        transform: translateY(0) scale(1);
-    }
-    to {
-        transform: translateY(40px) scale(1.1);
-    }
+    from { transform: translateY(0) scale(1); }
+    to   { transform: translateY(40px) scale(1.1); }
 }
 
 /* Content wrapper */
@@ -61,47 +58,131 @@
     flex: 1;
 }
 
-.intro h1 {
+/* ===== Terminal badge ===== */
+.terminal-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    font-family: var(--font-mono);
+    font-size: 0.85rem;
+    background: var(--terminal-bg);
+    border: 1px solid rgba(163, 230, 53, 0.3);
+    border-radius: var(--radius-sm);
+    padding: 6px 14px;
+    margin-bottom: 24px;
+}
+
+.terminal-prompt { color: var(--terminal-prompt); }
+.terminal-cmd    { color: var(--accent-color); }
+.terminal-arrow  { color: var(--text-secondary); }
+.terminal-output { color: var(--text-primary); }
+
+/* ===== Hero heading ===== */
+.hero-name {
     font-size: 3.5rem;
     font-weight: 800;
-    margin-bottom: 20px;
-    line-height: 1.2;
+    line-height: 1.15;
     letter-spacing: -0.03em;
-    background: linear-gradient(135deg, #ffffff 40%, var(--accent-color) 100%);
+    margin-bottom: 16px;
+}
+
+.gradient-name {
+    background: linear-gradient(135deg, #ffffff 30%, var(--accent-color) 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
 }
 
-.intro p {
-    font-size: 1.2rem;
-    line-height: 1.6;
-    margin-bottom: 35px;
+/* ===== Typed role line ===== */
+.hero-role {
+    font-size: 1.4rem;
+    font-weight: 600;
     color: var(--text-secondary);
+    min-height: 2.2rem;
+    margin-bottom: 20px;
+    font-family: var(--font-mono);
 }
 
-/* Button with design tokens */
-.btn {
+.typed-cursor {
+    color: var(--accent-color);
+    animation: blink 1s step-end infinite;
+    margin-left: 2px;
+}
+
+@keyframes blink { 50% { opacity: 0; } }
+
+/* ===== Hero subtext ===== */
+.hero-subtext {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    color: var(--text-secondary);
+    margin-bottom: 36px;
+    max-width: 520px;
+}
+
+/* ===== CTAs ===== */
+.hero-ctas {
+    display: flex;
+    gap: 16px;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.btn-primary {
     display: inline-block;
     padding: 14px 30px;
     background: var(--btn-gradient);
     color: #fff;
     font-weight: 600;
     text-decoration: none;
-    border-radius: 8px;
+    border-radius: var(--radius-sm);
     transition: var(--transition);
     box-shadow: 0 4px 15px rgba(0, 120, 255, 0.2);
 }
 
-.btn:hover {
+.btn-primary:hover {
     transform: translateY(-3px);
     box-shadow: 0 8px 25px var(--accent-glow);
     background: var(--btn-hover-gradient);
 }
 
-/* Home image container and glow */
+.btn-secondary {
+    display: inline-block;
+    padding: 13px 28px;
+    background: transparent;
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration: none;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--accent-color);
+    transition: var(--transition);
+}
+
+.btn-secondary:hover {
+    background: rgba(56, 189, 248, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px var(--accent-glow);
+}
+
+/* ===== Image & glow ring ===== */
 .home-image {
     position: relative;
     z-index: 2;
+    flex-shrink: 0;
+}
+
+.image-glow-ring {
+    position: absolute;
+    inset: -6px;
+    border-radius: 26px;
+    border: 2px solid rgba(56, 189, 248, 0.5);
+    animation: glowPulse 3s ease-in-out infinite;
+    pointer-events: none;
+}
+
+@keyframes glowPulse {
+    0%, 100% { box-shadow: 0 0 15px var(--accent-glow); opacity: 0.7; }
+    50%       { box-shadow: 0 0 35px var(--accent-glow), 0 0 60px rgba(56,189,248,0.15); opacity: 1; }
 }
 
 .home-image img {
@@ -109,19 +190,38 @@
     height: auto;
     border-radius: 20px;
     border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4), 0 0 40px rgba(56, 189, 248, 0.15);
+    box-shadow: var(--shadow-heavy);
     transition: var(--transition);
+    animation: floatImage 4s ease-in-out infinite;
+    display: block;
+}
+
+@keyframes floatImage {
+    0%, 100% { transform: translateY(0); }
+    50%       { transform: translateY(-12px); }
 }
 
 .home-image img:hover {
-    transform: scale(1.03) translateY(-5px);
+    transform: scale(1.05);
     box-shadow: 0 25px 50px rgba(0, 0, 0, 0.5), 0 0 50px rgba(56, 189, 248, 0.3);
-    border-color: rgba(56, 189, 248, 0.4);
 }
+
+/* ===== Page-load stagger animations ===== */
+@keyframes fadeInUp {
+    from { opacity: 0; transform: translateY(30px); }
+    to   { opacity: 1; transform: translateY(0); }
+}
+
+.terminal-badge { animation: fadeInUp 500ms 0ms   ease both; }
+.hero-name      { animation: fadeInUp 500ms 150ms ease both; }
+.hero-role      { animation: fadeInUp 500ms 300ms ease both; }
+.hero-subtext   { animation: fadeInUp 500ms 450ms ease both; }
+.hero-ctas      { animation: fadeInUp 500ms 600ms ease both; }
+.home-image     { animation: fadeInUp 500ms 200ms ease both; }
 
 /* ===== Responsive ===== */
 @media (max-width: 1024px) {
-    .intro h1 {
+    .hero-name {
         font-size: 3rem;
     }
 
@@ -136,18 +236,28 @@
     }
 
     .home-content {
-        flex-direction: column-reverse;
+        flex-direction: column;
         text-align: center;
         gap: 40px;
     }
 
-    .intro h1 {
+    .hero-name {
         font-size: 2.6rem;
     }
 
-    .intro p {
-        font-size: 1.1rem;
-        margin-bottom: 25px;
+    .hero-role {
+        font-size: 1.2rem;
+    }
+
+    .hero-subtext {
+        font-size: 1.05rem;
+        max-width: 100%;
+        margin-bottom: 28px;
+    }
+
+    .hero-ctas {
+        flex-direction: column;
+        align-items: center;
     }
 
     .home-image img {
@@ -160,15 +270,19 @@
         padding: 60px 15px;
     }
 
-    .intro h1 {
+    .hero-name {
         font-size: 2.2rem;
     }
 
-    .intro p {
+    .hero-role {
+        font-size: 1.1rem;
+    }
+
+    .hero-subtext {
         font-size: 1rem;
     }
 
     .home-image img {
-        width: 200px;
+        width: 220px;
     }
 }

@@ -223,3 +223,101 @@
         max-width: 380px;
     }
 }
+
+/* ===== Filter tabs ===== */
+.filter-tabs {
+  display: flex;
+  gap: 10px;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin-bottom: 28px;
+  overflow-x: auto;
+  padding-bottom: 4px;
+}
+
+.filter-tab {
+  padding: 8px 22px;
+  border-radius: var(--radius-pill);
+  border: 1px solid var(--card-border);
+  background: transparent;
+  color: var(--text-secondary);
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: var(--transition);
+  white-space: nowrap;
+  font-family: 'Inter', sans-serif;
+}
+
+.filter-tab:hover {
+  border-color: var(--accent-color);
+  color: var(--accent-color);
+}
+
+.filter-tab.active {
+  background: var(--btn-gradient);
+  border-color: transparent;
+  color: #fff;
+  box-shadow: 0 4px 15px rgba(0, 120, 255, 0.25);
+}
+
+/* ===== Top accent line on card hover ===== */
+.project-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.project-top-accent {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--accent-color);
+  transition: width 300ms ease;
+}
+
+.project-card:hover .project-top-accent {
+  width: 100%;
+}
+
+/* ===== Tech tag pills ===== */
+.tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 10px 0 18px;
+}
+
+.tech-tag {
+  padding: 3px 10px;
+  border-radius: var(--radius-sm);
+  background: rgba(56, 189, 248, 0.08);
+  border: 1px solid rgba(56, 189, 248, 0.25);
+  font-size: 0.72rem;
+  color: var(--accent-color);
+  font-family: var(--font-mono);
+  letter-spacing: 0.02em;
+}
+
+/* ===== Responsive updates ===== */
+@media (max-width: 768px) {
+  .filter-tabs {
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    padding: 0 4px 8px;
+    margin-bottom: 20px;
+  }
+
+  .filter-tab {
+    flex-shrink: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .tech-tag {
+    font-size: 0.65rem;
+  }
+}

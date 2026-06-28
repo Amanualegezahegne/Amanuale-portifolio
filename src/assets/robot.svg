@@ -1,0 +1,52 @@
+<svg width="120" height="140" viewBox="0 0 120 140" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <!-- Antenna -->
+  <line x1="60" y1="8" x2="60" y2="18" stroke="#00D9FF" stroke-width="3" stroke-linecap="round"/>
+  <circle cx="60" cy="5" r="4" fill="#00D9FF">
+    <animate attributeName="opacity" values="1;0.3;1" dur="2s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Head -->
+  <rect x="38" y="18" width="44" height="38" rx="8" fill="#1a1a1a" stroke="#00D9FF" stroke-width="2"/>
+  
+  <!-- Eyes -->
+  <circle cx="50" cy="32" r="5" fill="#00D9FF">
+    <animate attributeName="cy" values="32;32;30;32" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="70" cy="32" r="5" fill="#00D9FF">
+    <animate attributeName="cy" values="32;32;30;32" dur="4s" repeatCount="indefinite"/>
+  </circle>
+  
+  <!-- Mouth -->
+  <rect x="52" y="44" width="16" height="4" rx="2" fill="#666"/>
+  
+  <!-- Body -->
+  <rect x="30" y="62" width="60" height="50" rx="10" fill="#1a1a1a" stroke="#00D9FF" stroke-width="2"/>
+  
+  <!-- Screen/Display -->
+  <rect x="42" y="72" width="36" height="28" rx="4" fill="#0a0a0a"/>
+  <text x="60" y="90" font-family="monospace" font-size="14" fill="#00ff00" text-anchor="middle" font-weight="bold">&lt;/&gt;</text>
+  
+  <!-- Left Arm -->
+  <g class="arm-left">
+    <rect x="18" y="68" width="8" height="30" rx="4" fill="#1a1a1a" stroke="#00D9FF" stroke-width="2">
+      <animateTransform attributeName="transform" type="rotate" values="0 22 68;-15 22 68;0 22 68" dur="3s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="22" cy="102" r="5" fill="#00D9FF"/>
+  </g>
+  
+  <!-- Right Arm -->
+  <g class="arm-right">
+    <rect x="94" y="68" width="8" height="30" rx="4" fill="#1a1a1a" stroke="#00D9FF" stroke-width="2">
+      <animateTransform attributeName="transform" type="rotate" values="0 98 68;15 98 68;0 98 68" dur="3s" begin="0.5s" repeatCount="indefinite"/>
+    </rect>
+    <circle cx="98" cy="102" r="5" fill="#00D9FF"/>
+  </g>
+  
+  <!-- Legs -->
+  <rect x="40" y="116" width="12" height="20" rx="4" fill="#1a1a1a" stroke="#00D9FF" stroke-width="2"/>
+  <rect x="68" y="116" width="12" height="20" rx="4" fill="#1a1a1a" stroke="#00D9FF" stroke-width="2"/>
+  
+  <!-- Feet -->
+  <ellipse cx="46" cy="136" rx="8" ry="3" fill="#00D9FF"/>
+  <ellipse cx="74" cy="136" rx="8" ry="3" fill="#00D9FF"/>
+</svg>

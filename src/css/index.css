@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Outfit:wght@300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 :root {
   /* Colors & Theme Design System */
@@ -17,6 +17,30 @@
   --btn-gradient: linear-gradient(135deg, #0078ff, #00c6ff);
   --btn-hover-gradient: linear-gradient(135deg, #0056cc, #00a3ff);
   --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Shadow Tokens */
+  --shadow-card: 0 10px 30px rgba(0, 0, 0, 0.25);
+  --shadow-glow: 0 0 30px rgba(56, 189, 248, 0.25);
+  --shadow-heavy: 0 20px 50px rgba(0, 0, 0, 0.45);
+
+  /* Radius Tokens */
+  --radius-card: 16px;
+  --radius-pill: 999px;
+  --radius-sm: 8px;
+
+  /* Glass Tokens */
+  --glass-bg: rgba(13, 22, 32, 0.6);
+  --glass-border: rgba(255, 255, 255, 0.07);
+
+  /* Cursor */
+  --cursor-color: var(--accent-color);
+
+  /* Typography */
+  --font-mono: 'JetBrains Mono', 'Fira Code', 'Cascadia Code', monospace;
+
+  /* Terminal */
+  --terminal-prompt: #a3e635;
+  --terminal-bg: rgba(0, 0, 0, 0.4);
 }
 
 * {
@@ -78,4 +102,42 @@ h2 {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--accent-color);
+}
+
+/* ─── Scroll Reveal Utility ─────────────────────────────────────────────── */
+.reveal-item {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 600ms ease, transform 600ms ease;
+  transition-delay: var(--reveal-delay, 0ms);
+}
+
+.reveal-item.is-visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ─── Focus Styles ───────────────────────────────────────────────────────── */
+:focus-visible {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 3px;
+  border-radius: 4px;
+}
+
+:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* ─── Reduced Motion ─────────────────────────────────────────────────────── */
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+
+  .reveal-item {
+    opacity: 1 !important;
+    transform: none !important;
+  }
 }
