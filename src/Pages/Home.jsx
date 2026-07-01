@@ -29,7 +29,7 @@ const Home = () => {
 
                     <div className="hero-ctas">
                         <a href="#Projects" className="btn btn-primary">View My Work</a>
-                        <a href="/cv.pdf" download className="btn btn-secondary">Download CV</a>
+                        <a href="/Amanuale_Gezahegne_CV.docx" download className="btn btn-secondary">Download CV</a>
                     </div>
                 </div>
 

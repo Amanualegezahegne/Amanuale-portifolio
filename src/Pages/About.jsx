@@ -54,7 +54,7 @@ const About = () => {
             Constantly learning new technologies and improving my craft.
           </p>
 
-          <a href="/cv.pdf" download className="btn btn-secondary download-cv">
+          <a href="/Amanuale_Gezahegne_CV.docx" download className="btn btn-secondary download-cv">
             Download CV
           </a>
 
