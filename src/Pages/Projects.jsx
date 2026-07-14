@@ -33,7 +33,7 @@ const projects = [
     title: "Sweetbee Honey Website",
     description: "A clean, responsive web app showcasing natural honey products, allowing users to explore and purchase with ease.",
     link: "https://github.com/Amanualegezahegne/sweetbee.git",
-    demo: "https://amanualegezahegne.github.io/sweetbee/",
+    demo: "https://sweetbee-honey.vercel.app",
     category: "Web",
     tags: ["HTML", "CSS", "JavaScript"],
   },
