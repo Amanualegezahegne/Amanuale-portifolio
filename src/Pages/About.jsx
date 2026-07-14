@@ -2,7 +2,9 @@ import React, { useEffect, useRef, useState } from "react";
 import "../css/About.css";
 import profilePic from "../assets/images/DSC_0130.JPG";
 import SkillBar from "../Components/SkillBar";
+import CertificateModal from "../Components/CertificateModal";
 import { useScrollReveal } from "../hooks/useScrollReveal";
+import { FaCertificate } from "react-icons/fa";
 
 const SKILLS = [
   { label: 'HTML',       percent: 90 },
@@ -20,6 +22,7 @@ const About = () => {
   const cardRef1 = useRef(null);
   const cardRef2 = useRef(null);
   const [skillsVisible, setSkillsVisible] = useState(false);
+  const [isModalOpen, setIsModalOpen] = useState(false);
 
   useScrollReveal([cardRef0, cardRef1, cardRef2]);
 
@@ -54,9 +57,17 @@ const About = () => {
             Constantly learning new technologies and improving my craft.
           </p>
 
-          <a href="/Amanuale_Gezahegne_CV.docx" download className="btn btn-secondary download-cv">
+          <a href="/Amanuale_Gezahegne_CV.pdf" download className="btn btn-secondary download-cv">
             Download CV
           </a>
+
+          <button 
+            onClick={() => setIsModalOpen(true)} 
+            className="btn btn-secondary"
+            aria-label="View my certificates"
+          >
+            <FaCertificate /> View Certificates
+          </button>
 
           <div className="about-cards">
             <div className="card reveal-item" ref={cardRef0} style={{'--reveal-delay': '0ms'}}>
@@ -81,6 +92,11 @@ const About = () => {
         </div>
 
       </div>
+
+      <CertificateModal 
+        isOpen={isModalOpen} 
+        onClose={() => setIsModalOpen(false)} 
+      />
     </section>
   );
 };
