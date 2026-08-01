@@ -70,6 +70,14 @@ const projects = [
     tags: ["HTML", "CSS", "JavaScript"],
   },
   {
+    title: "Other Portfolios",
+    description: "Additional portfolio websites showcasing diverse projects and web development skills.",
+    link: "",
+    demo: "https://abrhame-portfolio.odoo.com",
+    category: "Web",
+    tags: ["Odoo", "Web Design"],
+  },
+  {
     title: "Kotlin Gradle Project",
     description: "A backend development project showcasing Kotlin's capabilities with the Gradle build system.",
     link: "https://github.com/Amanualegezahegne/kotlin__gradle_project.git",

@@ -14,6 +14,8 @@ const SKILLS = [
   { label: 'Node.js',    percent: 70 },
   { label: 'MongoDB',    percent: 65 },
   { label: 'Python',     percent: 60 },
+  { label: 'Odoo',       percent: 75 },
+  { label: 'WordPress',  percent: 70 },
   { label: 'Git',        percent: 78 },
 ];
 
